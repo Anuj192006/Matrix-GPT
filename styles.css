@@ -1,11 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
 }
-
 body {
     background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
     height: 100vh;
@@ -14,8 +12,6 @@ body {
     align-items: center;
     perspective: 800px;
 }
-
-/* 3D Chat Container (Wider & Fixed Input Overflow) */
 .chat-container {
     width: 70vw;
     max-width: 1000px;
@@ -29,7 +25,7 @@ body {
     flex-direction: column;
     transform: rotateY(10deg) translateZ(50px);
     animation: float 4s infinite ease-in-out;
-    overflow: hidden; /* Ensures no overflow */
+    overflow: hidden;
 }
 
 /* Floating Effect */
@@ -37,8 +33,6 @@ body {
     0%, 100% { transform: rotateY(5deg) translateY(0) translateZ(50px); }
     50% { transform: rotateY(-5deg) translateY(-10px) translateZ(50px); }
 }
-
-/* Chat Messages */
 .chat-box {
     flex-grow: 1;
     overflow-y: auto;
@@ -48,8 +42,6 @@ body {
     flex-direction: column;
     gap: 12px;
 }
-
-/* Message Styles */
 .message {
     padding: 12px;
     border-radius: 5px;
@@ -61,12 +53,10 @@ body {
     transform-style: preserve-3d;
     animation: messagePop 0.3s ease-out;
 }
-
 @keyframes messagePop {
     0% { transform: scale(0.8) translateZ(10px); opacity: 0; }
     100% { transform: scale(1) translateZ(0); opacity: 1; }
 }
-
 .system {
     text-align: center;
     color: #00ffff;
@@ -76,8 +66,6 @@ body {
     position: fixed;
     z-index: 1;
 }
-
-/* 3D Sent & Received Messages */
 .sent {
     background: linear-gradient(135deg, #00ffff, #00ccff);
     color: black;
@@ -85,7 +73,6 @@ body {
     box-shadow: 0 0 10px cyan, 0 0 30px rgba(0, 255, 255, 0.5);
     transform: rotateY(-10deg);
 }
-
 .received {
     background: linear-gradient(135deg, #222, #444);
     color: white;
@@ -93,14 +80,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     transform: rotateY(10deg);
 }
-
-/* Glitch Effect */
 @keyframes glitch {
     0% { text-shadow: 3px 3px #ff00ff, -3px -3px #00ffff; }
     50% { text-shadow: -3px -3px #ff00ff, 3px 3px #00ffff; }
     100% { text-shadow: 3px 3px #ff00ff, -3px -3px #00ffff; }
 }
-
 .message.received::before {
     content: "RECEIVED";
     position: absolute;
@@ -110,16 +94,12 @@ body {
     left: 5px;
     animation: glitch 1s infinite alternate;
 }
-
-/* Input Area (Fixed Alignment) */
 .input-area {
     display: flex;
-    width: 100%; /* Ensures it fits inside */
+    width: 100%;
     margin-top: 10px;
     gap: 10px;
 }
-
-/* 3D Text Input */
 #chat-input {
     flex: 1;
     padding: 12px;
@@ -139,8 +119,6 @@ body {
     transform: translateZ(15px);
     box-shadow: 0 0 20px cyan;
 }
-
-/* 3D Button (Fixed Width) */
 #send-btn {
     padding: 12px 20px;
     background: linear-gradient(135deg, cyan, #00ccff);
@@ -160,14 +138,11 @@ body {
     transform: translateZ(15px);
     box-shadow: 0 0 25px cyan, 0 0 50px cyan;
 }
-
-/* Button Press Effect */
 #send-btn:active {
     transform: translateZ(5px);
     box-shadow: 0 0 10px cyan, 0 0 20px cyan;
 }
 
-/* AI Response Styling - Bigger, Bolder & More Readable */
 .ai-response {
     width: 90%;
     height: 90%;
